@@ -1,0 +1,41 @@
+{
+  "title": "Our Story",
+  "description": "A journey of unexpected paths crossing again.",
+  "chapters": [
+    {
+      "id": "childhood",
+      "title": "Childhood Days",
+      "subtitle": "Silent presence in the same classroom",
+      "description": "We shared the same childhood skies. We walked the same paths, sat in the same classrooms, yet we were in separate worlds. We rarely spoke, only knowing each other as distant names in an attendance register.",
+      "visual": "childhood"
+    },
+    {
+      "id": "years-passed",
+      "title": "The Silent Years",
+      "subtitle": "Time, distance, and separate journeys",
+      "description": "Years passed by. High school ended, college began, and life swept us into different directions. We grew up, pursued our dreams, and the memory of childhood became a soft, distant whisper.",
+      "visual": "years-passed"
+    },
+    {
+      "id": "reconnection",
+      "title": "Instagram Reconnection",
+      "subtitle": "A simple tap that changed the silence",
+      "description": "Just a month ago, a casual scroll on Instagram brought your profile to my screen. Out of simple curiosity, a message was sent, and after years of silence, you replied. A small bridge was built over a decade of distance.",
+      "visual": "reconnection"
+    },
+    {
+      "id": "one-month",
+      "title": "One Month of Conversations",
+      "subtitle": "How days became brighter",
+      "description": "It has only been about thirty days. Yet, within this short time, exchanging thoughts with you has become the part of the day I look forward to the most. Every text, every shared laugh, and every simple conversation started to mean something.",
+      "visual": "one-month"
+    },
+    {
+      "id": "comfort-zone",
+      "title": "My Comfort Zone",
+      "subtitle": "Finding peace in conversations",
+      "description": "You became someone I can talk to without pretense. In a busy, noisy world, your presence and our conversations became a quiet sanctuary. A comfort zone where time slows down and everything feels peaceful.",
+      "visual": "comfort-zone"
+    }
+  ]
+}

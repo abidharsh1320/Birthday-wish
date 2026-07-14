@@ -1,0 +1,24 @@
+{
+  "wishes": [
+    {
+      "title": "Academic Brilliance",
+      "message": "May your upcoming M.Sc Biotechnology journey be filled with groundbreaking research, fascinating lab discoveries, and academic success. You have the mind of a true scientist.",
+      "icon": "beaker"
+    },
+    {
+      "title": "Peace & Joy",
+      "message": "May you always find peace in the paths you choose. May your days be filled with laughter, your heart with contentment, and your life with people who cherish you.",
+      "icon": "sparkles"
+    },
+    {
+      "title": "Unending Curiosity",
+      "message": "Never lose your wonder for the molecular wonders of life. May you contribute to biotechnology in ways that leave the world healthier and more knowledgeable.",
+      "icon": "microscope"
+    },
+    {
+      "title": "A Beautiful Future",
+      "message": "May every dream you hold in your heart find its path to reality. You deserve a future as bright and beautiful as the comfort you bring to others.",
+      "icon": "stars"
+    }
+  ]
+}

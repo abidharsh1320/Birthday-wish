@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "period": "2005 - 2018",
+      "title": "Shared Childhood",
+      "subtitle": "The Classroom Silence",
+      "description": "We shared the same school yard and classroom. Though we rarely spoke, our paths were already subtly aligned under the same sky.",
+      "icon": "school"
+    },
+    {
+      "period": "2018 - 2026",
+      "title": "The Growth Years",
+      "subtitle": "Separate Paths, Shared Growth",
+      "description": "We grew up in different directions. You entered the world of Biotechnology, discovering your love for science, while I focused on engineering. Days turned into years of silence.",
+      "icon": "globe"
+    },
+    {
+      "period": "June 2026",
+      "title": "The Reconnection",
+      "subtitle": "Instagram Bridge",
+      "description": "A random scroll, a simple direct message. A bridge was built across the years of silence. We started talking, finding common ground we never knew existed.",
+      "icon": "instagram"
+    },
+    {
+      "period": "July 2026",
+      "title": "One Beautiful Month",
+      "subtitle": "Conversations & Comfort",
+      "description": "Thirty days of constant connection. Shareable moments, late-night thoughts, and daily updates. You became my daily dose of peace.",
+      "icon": "heart"
+    },
+    {
+      "period": "July 20, 2026",
+      "title": "Your Birthday",
+      "subtitle": "Celebrating Priyadharshika",
+      "description": "Wishing you the happiest birthday as you turn 21, ready to take on the world of M.Sc Biotechnology and beyond. This digital gift is for you.",
+      "icon": "gift"
+    }
+  ]
+}

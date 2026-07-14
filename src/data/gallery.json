@@ -1,0 +1,34 @@
+{
+  "title": "Moments of Inspiration",
+  "subtitle": "Beautiful visual milestones of our journey and your dreams",
+  "items": [
+    {
+      "id": 1,
+      "title": "The Spark of Biotech",
+      "category": "Biotechnology",
+      "description": "Celebrating your dedication to science, cells, and discovery.",
+      "image": "biotech-art.webp"
+    },
+    {
+      "id": 2,
+      "title": "Childhood Playground",
+      "category": "Memories",
+      "description": "A throwback to the simple days under the warm, golden sun.",
+      "image": "childhood-art.webp"
+    },
+    {
+      "id": 3,
+      "title": "Midnight Chat Stars",
+      "category": "Connection",
+      "description": "When the night is quiet and two souls share their day.",
+      "image": "stars-art.webp"
+    },
+    {
+      "id": 4,
+      "title": "Future Horizons",
+      "category": "Dreams",
+      "description": "To M.Sc Biotechnology and all the milestones waiting for you.",
+      "image": "future-art.webp"
+    }
+  ]
+}
