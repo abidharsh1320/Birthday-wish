@@ -89,19 +89,16 @@ class AmbientSynth {
   private playLoop = () => {
     if (!this.isPlaying || !this.ctx) return;
 
-    const now = this.ctx.currentTime;
-
-    // Ambient chord progression: Cmaj7 -> Fmaj7 -> Am7 -> G (very soft, spread out, slow)
-    // Chords are changed every 8 seconds
+    // Ambient chord progression in C Major
     const progressions = [
-      // Cmaj7 (C3, G3, B3, E4)
-      [130.81, 196.00, 246.94, 329.63],
-      // Fmaj7 (F3, C4, E4, A4)
-      [174.61, 261.63, 329.63, 440.00],
-      // Am7 (A2, E3, G3, C4)
-      [110.00, 164.81, 196.00, 261.63],
-      // G6/9 (G2, D3, B3, E4)
-      [98.00, 146.83, 246.94, 329.63]
+      // Cmaj7 (C3, E3, G3, B3, E4)
+      [130.81, 164.81, 196.00, 246.94, 329.63],
+      // Fmaj7 (F3, A3, C4, E4, G4)
+      [174.61, 220.00, 261.63, 329.63, 392.00],
+      // Am7 (A2, C3, E3, G3, C4)
+      [110.00, 130.81, 164.81, 196.00, 261.63],
+      // G (G2, D3, G3, B3, D4)
+      [98.00, 146.83, 196.00, 246.94, 293.66]
     ];
 
     let chordIndex = 0;
@@ -114,26 +111,44 @@ class AmbientSynth {
 
       // Play pad notes
       notes.forEach((freq, i) => {
-        // Stagger note starts slightly for more organic feel
         const delay = i * 0.15 + Math.random() * 0.1;
-        this.playTone(freq, chordNow + delay, 7.5, "triangle", 0.08);
+        this.playTone(freq, chordNow + delay, 9.5, "triangle", 0.08);
       });
 
-      // Play light melodic sparkle (sine wave, high pitch)
-      if (Math.random() > 0.3) {
-        const melodyPitches = [523.25, 587.33, 659.25, 783.99, 880.00, 987.77, 1046.50]; // Pentatonic scales/sparkles
+      // Play recognizable Tamil melody ("Munbe Vaa" theme) in pentatonic bells
+      // on Chords 1 and 3, and random sparkles on others
+      if (chordIndex === 0 || chordIndex === 2) {
+        const munbeVaaNotes = [
+          659.25, // E5
+          587.33, // D5
+          523.25, // C5
+          587.33, // D5
+          659.25, // E5
+          783.99, // G5
+          880.00, // A5
+          783.99, // G5
+          659.25, // E5
+          587.33, // D5
+          523.25, // C5
+          587.33, // D5
+          523.25  // C5
+        ];
+        munbeVaaNotes.forEach((freq, idx) => {
+          const noteTime = chordNow + 1.2 + idx * 0.48;
+          this.playTone(freq, noteTime, 0.9, "sine", 0.035);
+        });
+      } else {
+        const melodyPitches = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50];
         const randMelody1 = melodyPitches[Math.floor(Math.random() * melodyPitches.length)];
         const randMelody2 = melodyPitches[Math.floor(Math.random() * melodyPitches.length)];
-
         this.playTone(randMelody1, chordNow + 2.0 + Math.random(), 3.0, "sine", 0.03);
-        this.playTone(randMelody2, chordNow + 4.5 + Math.random(), 2.5, "sine", 0.03);
+        this.playTone(randMelody2, chordNow + 5.0 + Math.random(), 2.5, "sine", 0.03);
       }
 
-      // Next chord index
       chordIndex = (chordIndex + 1) % progressions.length;
 
-      // Schedule next chord in 8 seconds
-      const timeoutId = window.setTimeout(scheduleNextChord, 8000);
+      // Schedule next chord in 10 seconds
+      const timeoutId = window.setTimeout(scheduleNextChord, 10000);
       this.timerIds.push(timeoutId);
     };
 
@@ -237,7 +252,7 @@ export default function AudioPlayer() {
           />
 
           <span className="text-[10px] text-rose-400/80 font-mono flex items-center gap-1">
-            <Music size={10} className="animate-spin" style={{ animationDuration: '4s' }} /> Ambient Synth
+            <Music size={10} className="animate-spin" style={{ animationDuration: '4s' }} /> Munbe Vaa Theme
           </span>
         </div>
       )}

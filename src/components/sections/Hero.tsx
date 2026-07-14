@@ -83,7 +83,7 @@ export default function Hero() {
         >
           <span className="text-slate-400 text-xs tracking-[0.3em] uppercase">CELEBRATING</span>
           <span className="text-rose-200 text-lg md:text-xl tracking-widest font-semibold border-b border-rose-500/20 pb-2 px-6">
-            {birthdayData.birthday.toUpperCase()}
+            21ST BIRTHDAY
           </span>
         </motion.div>
 

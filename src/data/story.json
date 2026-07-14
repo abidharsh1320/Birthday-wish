@@ -1,40 +1,40 @@
 {
   "title": "Our Story",
-  "description": "A journey of unexpected paths crossing again.",
+  "description": "A journey of unexpected paths crossing through conversations.",
   "chapters": [
     {
-      "id": "childhood",
-      "title": "Childhood Days",
-      "subtitle": "Silent presence in the same classroom",
-      "description": "We shared the same childhood skies. We walked the same paths, sat in the same classrooms, yet we were in separate worlds. We rarely spoke, only knowing each other as distant names in an attendance register.",
+      "id": "knowing-existence",
+      "title": "Knowing From Afar",
+      "subtitle": "Parallel paths, different schools",
+      "description": "We grew up in different schools and lived different lives. We knew of each other's existence in our hometown, but we never spoke to each other. We were two parallel lines, running close but never crossing.",
       "visual": "childhood"
     },
     {
-      "id": "years-passed",
+      "id": "silent-years",
       "title": "The Silent Years",
-      "subtitle": "Time, distance, and separate journeys",
-      "description": "Years passed by. High school ended, college began, and life swept us into different directions. We grew up, pursued our dreams, and the memory of childhood became a soft, distant whisper.",
+      "subtitle": "Separate worlds, separate colleges",
+      "description": "Life took us to completely different colleges and journeys. Years rolled on in silence, with each of us focused on our own goals, studies, and circles.",
       "visual": "years-passed"
     },
     {
-      "id": "reconnection",
-      "title": "Instagram Reconnection",
-      "subtitle": "A simple tap that changed the silence",
-      "description": "Just a month ago, a casual scroll on Instagram brought your profile to my screen. Out of simple curiosity, a message was sent, and after years of silence, you replied. A small bridge was built over a decade of distance.",
+      "id": "insta-request",
+      "title": "The Simple Tap",
+      "subtitle": "An Instagram request",
+      "description": "About a month ago, I came across your profile on Instagram and initiated the connection by sending a request. You accepted it, and a digital connection was established.",
       "visual": "reconnection"
     },
     {
-      "id": "one-month",
-      "title": "One Month of Conversations",
-      "subtitle": "How days became brighter",
-      "description": "It has only been about thirty days. Yet, within this short time, exchanging thoughts with you has become the part of the day I look forward to the most. Every text, every shared laugh, and every simple conversation started to mean something.",
+      "id": "first-message",
+      "title": "First Conversation",
+      "subtitle": "\"Is this connection sent by you?\"",
+      "description": "The silence broke when you messaged first, asking if the connection was sent by me. That single question initiated our first conversation, opening a door we had never knocked on before.",
       "visual": "one-month"
     },
     {
       "id": "comfort-zone",
       "title": "My Comfort Zone",
       "subtitle": "Finding peace in conversations",
-      "description": "You became someone I can talk to without pretense. In a busy, noisy world, your presence and our conversations became a quiet sanctuary. A comfort zone where time slows down and everything feels peaceful.",
+      "description": "Since that day, our chats became a quiet shelter. Your calmness, understanding, and childish behavior made these conversations the absolute highlight of my day.",
       "visual": "comfort-zone"
     }
   ]

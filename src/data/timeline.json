@@ -2,37 +2,37 @@
   "events": [
     {
       "period": "2005 - 2018",
-      "title": "Shared Childhood",
-      "subtitle": "The Classroom Silence",
-      "description": "We shared the same school yard and classroom. Though we rarely spoke, our paths were already subtly aligned under the same sky.",
+      "title": "Parallel Existence",
+      "subtitle": "Knew of Existence",
+      "description": "Growing up in the same hometown. We went to different schools and lived different lives, only knowing of each other's name and existence from afar.",
       "icon": "school"
     },
     {
       "period": "2018 - 2026",
       "title": "The Growth Years",
-      "subtitle": "Separate Paths, Shared Growth",
-      "description": "We grew up in different directions. You entered the world of Biotechnology, discovering your love for science, while I focused on engineering. Days turned into years of silence.",
+      "subtitle": "Different Colleges",
+      "description": "Life took us to completely different colleges and paths. You discovered your love for Biotechnology, while I focused on engineering. Distance and time kept our paths silent.",
       "icon": "globe"
     },
     {
       "period": "June 2026",
-      "title": "The Reconnection",
-      "subtitle": "Instagram Bridge",
-      "description": "A random scroll, a simple direct message. A bridge was built across the years of silence. We started talking, finding common ground we never knew existed.",
+      "title": "The Instagram Connection",
+      "subtitle": "Request & First Message",
+      "description": "The silence broke when I sent an Instagram request. After accepting, you messaged first asking: 'Is this connection sent by you?' and our conversation began.",
       "icon": "instagram"
     },
     {
       "period": "July 2026",
-      "title": "One Beautiful Month",
-      "subtitle": "Conversations & Comfort",
-      "description": "Thirty days of constant connection. Shareable moments, late-night thoughts, and daily updates. You became my daily dose of peace.",
+      "title": "One Month of Conversations",
+      "subtitle": "Comfort in Chats",
+      "description": "Thirty days of constant connection. Finding comfort in your childish behavior, calmness, and understanding. You became my daily dose of peace.",
       "icon": "heart"
     },
     {
       "period": "July 20, 2026",
       "title": "Your Birthday",
       "subtitle": "Celebrating Priyadharshika",
-      "description": "Wishing you the happiest birthday as you turn 21, ready to take on the world of M.Sc Biotechnology and beyond. This digital gift is for you.",
+      "description": "Wishing you the happiest birthday as you turn 21, ready to take on the world of M.Sc Biotechnology. This digital capsule is for you.",
       "icon": "gift"
     }
   ]
