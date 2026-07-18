@@ -146,8 +146,12 @@ export default function EnvelopeLetter() {
 
                   {/* Letter Sign-off */}
                   <div className="pt-4 border-t border-rose-500/10 flex flex-col items-end">
-                    <span className="text-xs text-slate-500 italic font-serif">{proposalData.signOff}</span>
-                    <span className="text-sm font-serif font-bold text-rose-500 mt-1">Your Well-Wisher</span>
+                    <span className="text-xs text-rose-600/90 font-medium italic font-serif">
+                      {proposalData.signOff}
+                    </span>
+                    <span className="text-sm font-serif font-bold text-rose-500 mt-1 flex items-center gap-1">
+                      {proposalData.sender} <Heart size={12} className="fill-rose-500 text-rose-500 inline animate-pulse" style={{ animationDuration: '1.5s' }} />
+                    </span>
                   </div>
                 </div>
               </motion.div>
