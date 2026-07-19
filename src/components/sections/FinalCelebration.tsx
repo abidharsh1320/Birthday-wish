@@ -263,11 +263,19 @@ export default function FinalCelebration({ nameEntered }: FinalCelebrationProps)
         </AnimatePresence>
 
         {/* Final Sign-off */}
-        <div className="mt-6 flex flex-col items-center gap-2">
-          <p className="text-xs font-mono text-slate-500 uppercase tracking-widest">
-            Happy Birthday Priyadharshika. Turn 21 with grace.
+        <div className="mt-6 flex flex-col items-center gap-2.5">
+          <p className="text-xs font-mono text-slate-400 uppercase tracking-widest flex items-center gap-2 justify-center flex-wrap">
+            <span>Happy Birthday Priyadharshika</span>
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="inline-flex items-center justify-center text-rose-400 fill-rose-400 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]"
+            >
+              <Heart size={12} className="fill-rose-400 text-rose-400" />
+            </motion.span>
+            <span>. Turn 21 with grace.</span>
           </p>
-          <div className="text-[10px] font-mono text-slate-700">
+          <div className="text-[10px] font-mono text-slate-600">
             Designed with respect and appreciation.
           </div>
         </div>

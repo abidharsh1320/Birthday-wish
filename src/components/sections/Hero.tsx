@@ -64,14 +64,14 @@ export default function Hero() {
         >
           Happy Birthday
           <br />
-          <span className="relative inline-block">
-            {birthdayData.name}
+          <span className="inline-flex items-center gap-2 sm:gap-4 md:gap-6 justify-center [text-fill-color:initial] [-webkit-text-fill-color:initial]">
+            <span className="text-gradient-rose-purple">{birthdayData.name}</span>
             <motion.span
-              animate={{ scale: [1, 1.15, 1] }}
+              animate={{ scale: [1, 1.18, 1] }}
               transition={heartbeatTransition}
-              className="absolute -right-8 sm:-right-12 top-1/2 -translate-y-1/2 text-rose-500 text-3xl sm:text-5xl md:text-7xl"
+              className="inline-block drop-shadow-[0_0_15px_rgba(244,63,94,0.7)] text-rose-400 fill-rose-400"
             >
-              ❤️
+              <Heart className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 fill-rose-400 text-rose-400 stroke-[1.5]" />
             </motion.span>
           </span>
         </motion.h1>
