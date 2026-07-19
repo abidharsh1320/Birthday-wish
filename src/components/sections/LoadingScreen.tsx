@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Dna, Lock, Unlock } from "lucide-react";
+import confetti from "canvas-confetti";
 
 interface LoadingScreenProps {
   onUnlock: (nameEntered: string) => void;
@@ -67,16 +68,15 @@ export default function LoadingScreen({ onUnlock }: LoadingScreenProps) {
       return;
     }
 
-    // Support variations of her name or nickname
-    if (cleanName.includes("priya") || cleanName.includes("dharsh") || cleanName.includes("dharshika") || cleanName.includes("priyadharshika")) {
-      onUnlock(name.trim());
-    } else {
-      // Allow any name but flag if it's not her, or let them enter. 
-      // Actually, we want anyone to be able to enter if they want, but show a warning or just unlock it as a guest
-      // The prompt says "Typing her name unlocks a hidden message". 
-      // So let's unlock for ANY name, but pass it up so we know if it was Priyadharshika!
-      onUnlock(name.trim());
-    }
+    // Trigger elegant welcome confetti blast
+    confetti({
+      particleCount: 80,
+      spread: 60,
+      origin: { y: 0.6 },
+      colors: ["#f43f5e", "#a855f7", "#fda4af"]
+    });
+
+    onUnlock(name.trim());
   };
 
   return (

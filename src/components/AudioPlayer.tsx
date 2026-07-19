@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Music, Play, Pause, Volume2, VolumeX, ListMusic } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Track {
   id: string;
@@ -32,11 +33,12 @@ const TRACKS: Track[] = [
 ];
 
 export default function AudioPlayer() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [volume, setVolume] = useState(0.5);
   const [isMuted, setIsMuted] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [showPlaylist, setShowPlaylist] = useState(false);
+  const [notes, setNotes] = useState<{ id: number; left: number }[]>([]);
   
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -67,7 +69,25 @@ export default function AudioPlayer() {
     }
   }, [volume, isMuted]);
 
-  // Handle track changing
+  // Generate floating music notes when playing
+  useEffect(() => {
+    if (!isPlaying) {
+      setNotes([]);
+      return;
+    }
+
+    const interval = setInterval(() => {
+      const now = Date.now();
+      setNotes((prev) => [
+        ...prev.filter(n => now - n.id < 2500),
+        { id: now, left: Math.random() * 120 + 20 },
+      ]);
+    }, 700);
+
+    return () => clearInterval(interval);
+  }, [isPlaying]);
+
+  // Handle track changing with smooth volume fade-in
   useEffect(() => {
     // Save selection
     localStorage.setItem("birthday_track_id", TRACKS[currentTrackIndex].id);
@@ -82,11 +102,27 @@ export default function AudioPlayer() {
     // Initialize new audio
     const audio = new Audio(TRACKS[currentTrackIndex].url);
     audio.loop = true;
-    audio.volume = isMuted ? 0 : volume;
+    audio.volume = 0; // Start at 0 for fade-in
     audioRef.current = audio;
 
+    let fadeInterval: ReturnType<typeof setInterval>;
+
     if (wasPlaying) {
-      audio.play().catch(err => {
+      audio.play().then(() => {
+        // Fade in volume over 1.5s (30 steps, 50ms each)
+        let currentVol = 0;
+        const targetVol = isMuted ? 0 : volume;
+        const step = targetVol / 30;
+
+        fadeInterval = setInterval(() => {
+          if (audioRef.current && currentVol < targetVol) {
+            currentVol = Math.min(targetVol, currentVol + step);
+            audioRef.current.volume = currentVol;
+          } else {
+            clearInterval(fadeInterval);
+          }
+        }, 50);
+      }).catch(err => {
         console.error("Autoplay failed on track change:", err);
         setIsPlaying(false);
       });
@@ -94,6 +130,7 @@ export default function AudioPlayer() {
 
     return () => {
       audio.pause();
+      if (fadeInterval) clearInterval(fadeInterval);
     };
   }, [currentTrackIndex]);
 
@@ -133,6 +170,30 @@ export default function AudioPlayer() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+      {/* Floating Music Notes */}
+      {isPlaying &&
+        notes.map((note) => (
+          <motion.span
+            key={note.id}
+            initial={{ y: 0, opacity: 0, scale: 0.5 }}
+            animate={{
+              y: -80,
+              opacity: [0, 0.9, 0.9, 0],
+              scale: [0.6, 1.2, 1.2, 0.8],
+              x: [0, (note.id % 2 === 0 ? 15 : -15), 0],
+            }}
+            transition={{ duration: 2.2, ease: "easeOut" }}
+            className="absolute text-rose-300 pointer-events-none select-none text-[11px] font-bold z-10"
+            style={{
+              right: `${note.left}px`,
+              bottom: "45px",
+              textShadow: "0 0 8px rgba(244, 63, 94, 0.6)",
+            }}
+          >
+            {["♪", "♫", "♬", "♩"][Math.floor(note.id % 4)]}
+          </motion.span>
+        ))}
+
       {/* Playlist Dropdown */}
       {showPlaylist && (
         <div className="w-64 p-3 rounded-2xl glass-panel border border-rose-500/20 shadow-xl animate-fade-in duration-200 mb-2">
